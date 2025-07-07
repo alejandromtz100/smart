@@ -9,8 +9,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
-
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -19,10 +17,9 @@ app.use(express.json());
 app.use('/api/movimientos', movimientoRoutes);
 
 // Conexión a MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
-    console.log('🟢 Conectado a MongoDB');
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('✅ Conectado a MongoDB');
     app.listen(PORT, () => console.log(`🚀 Servidor en http://localhost:${PORT}`));
-}).catch(err => console.error('🔴 Error de conexión a MongoDB:', err));
+  })
+  .catch(err => console.error('🔴 Error de conexión a MongoDB:', err));
