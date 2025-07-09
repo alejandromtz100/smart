@@ -5,6 +5,7 @@ const MovimientoSchema = new mongoose.Schema({
     x: Number,
     y: Number,
     z: Number,
+    ritmo_cardiaco: Number,  // ⬅️ Nuevo campo agregado
     fecha: { type: Date, default: Date.now }
 });
 
