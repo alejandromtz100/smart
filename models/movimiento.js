@@ -5,7 +5,6 @@ const MovimientoSchema = new mongoose.Schema({
     x: Number,
     y: Number,
     z: Number,
-    ritmo: Number, // 💓 Nuevo campo
     fecha: { type: Date, default: Date.now }
 });
 
